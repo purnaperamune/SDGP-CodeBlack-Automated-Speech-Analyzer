@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1034883546933",
+    "project_id": "recoder-70ef7",
+    "storage_bucket": "recoder-70ef7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034883546933:android:1207ace1053283c44e167c",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034883546933-r9qqs3oav25g8fctjooo19d20fcm5eqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaca_2MG3qLQcSbAtpUH1_pPyn7AytezA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034883546933-r9qqs3oav25g8fctjooo19d20fcm5eqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
