@@ -38,8 +38,8 @@ public class welcome extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(welcome.this , userSignUpActivity.class); TODO: remove the comment.
-//                startActivity(intent);
+                Intent intent = new Intent(welcome.this , userSignUpActivity.class);
+                startActivity(intent);
             }
         });
 
