@@ -53,8 +53,8 @@ public class userSignUpActivity extends AppCompatActivity {
         txtBtnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent1 = new Intent(userSignUpActivity.this , userLogInActivity.class); todo clear comments
-//                startActivity(intent1);
+                Intent intent1 = new Intent(userSignUpActivity.this , userLogInActivity.class);
+                startActivity(intent1);
             }
         });
 
@@ -89,9 +89,9 @@ public class userSignUpActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-//                                Intent signInIntent = new Intent(userSignUpActivity.this, userLogInActivity.class); todo clear comments
+                                Intent signInIntent = new Intent(userSignUpActivity.this, userLogInActivity.class);
                                 userSignUpActivity.this.finish();
-//                                startActivity(signInIntent);
+                                startActivity(signInIntent);
 
                             } else {
                                 // If sign in fails, display a message to the user.
