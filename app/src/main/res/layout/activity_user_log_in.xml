@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userLogInActivity">
+
+    <!--    Text of User Authentication-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Authentication"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:id="@+id/txtUserAuthLogIn"/>
+
+    <!--    Text of Log In to Continue-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back! Log In with the Email"
+        android:layout_below="@id/txtUserAuthLogIn"
+        android:padding="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:id="@+id/txtLogIn"/>
+
+    <!--    Image of User Log In-->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img_log_in"
+        android:layout_below="@+id/txtLogIn"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgLogIn"/>
+
+    <!--    Editable text field for Email-->
+    <EditText
+        android:id="@+id/editTxtEmailLogIn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgLogIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="Email" />
+
+    <!--    Editable text field for Password-->
+    <EditText
+        android:id="@+id/editTxtPasswordLogIn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTxtEmailLogIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="Password" />
+
+    <!--    Button for Sign Up-->
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTxtPasswordLogIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Log In"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <!--    Text of Signed Up before-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textSize="15dp"
+        android:layout_below="@+id/btnLogIn"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic"
+        android:id="@+id/txtLogInBefore"/>
+
+    <!--    Clickable text for Log In-->
+    <TextView
+        android:id="@+id/txtBtnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLogInBefore"
+        android:layout_centerHorizontal="true"
+        android:text="Sign Up"
+        android:textColor="@color/blue"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
