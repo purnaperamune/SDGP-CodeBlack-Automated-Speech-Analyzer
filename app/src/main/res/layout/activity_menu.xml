@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MenuActivity">
+
+
+    <Button
+        android:id="@+id/btnRateSpeech"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_marginTop="20px"
+        android:layout_marginBottom="20px"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/rating"
+        android:paddingTop="70px"
+        android:text="Rate Speech"
+        android:textSize="55px" />
+
+    <Button
+        android:id="@+id/btnRecorder"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_marginBottom="20px"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/recorder"
+        android:paddingTop="70px"
+        android:text="Recorder"
+        android:textSize="55px"
+        android:onClick="recorderPage" />
+
+    <Button
+        android:id="@+id/btnPastSpeech"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_marginBottom="20px"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/folder"
+        android:paddingTop="70px"
+        android:text="Past Speech"
+        android:textSize="55px"
+        android:onClick="btnPastSpeech"/>
+
+
+</LinearLayout>
