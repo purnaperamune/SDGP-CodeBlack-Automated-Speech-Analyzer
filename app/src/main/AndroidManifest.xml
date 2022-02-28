@@ -15,6 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Recorder"
+            android:exported="false" />
         <activity android:name=".welcome"
             android:exported="true">
             <intent-filter>
@@ -23,6 +29,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity android:name=".userLogInActivity"
+            android:exported="true">
+
+
+        </activity>
+        <activity android:name=".userSignUpActivity"/>
     </application>
 
 </manifest>
