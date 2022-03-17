@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sdgp-voice-recognition",
+  "private_key_id": "040344760f015ccb59da4bbcc78f7b462db6548f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6SHHqKfMLObXh\n/FmgujbMdxIOR34jcwqoPb2aMVIj1tfm6tzgSrHwmLumLlpQ1jQ2VguQrNcdLfHV\nUcw6MDFBdsEmIXfZiuMuq6tGov0yOEnv1nS+Mz3V5FpXdUg99uwfLXQRzcghvaDt\nyOc5UVwzzxEjCL3Yupb9MUz5YO/VazD07i9GhwRhZd8xOA3/plFsv0wJ8+wTAO46\n2AVFAO86IfbfI6LyYzKC7MhH9kUv15x+D9DV76E5spJNDnQ2tM95ZEqheseE9EkZ\nIjUHXMEefmA9v51S1Ov4goEo4ioEp4NY+YoDFuHHNsRpStIhCdU+MkavV/qXmkMu\nADDZwYCHAgMBAAECggEAD37SNvvJU1A4IHW40OVchJKNBnIM/I7nvonwOSDMJ94J\ntJQpzmB4P768sTye16WRz0lGCgFOnYdCXA/DUL3MgxkJRQ44pXhnoGy4QRZywFgt\nUk2BBYdGqAGoQCkp2rms94T06Dw5XxEij1UMYtixNkANuV/TRvFyeNo+gGn/WT2+\nhZ31luOI0ciz+UUxhNP0YCQaIUjUNXgChMZ2HKm1boIuFMG8ZBQEl5O8ljVZruOc\n2sKJzEauEuj3pm+YcskxbZgsnGFDY5uzAE5gpt9dEl3r3KgN3uQlplTR2r1yz1Ez\nHUmHVpnwtCyucH4/QoGdvZGY/RWVv6q35Uj9+292wQKBgQDkN1UzCHiPJLprF+kL\nZAYDMpt3wazsLAWdJaGCE4nTOg27L4/IH+dDIOae9aMtIIQlgy59pCXk4hiDdv/V\nreXex/qxHtLF8cYKFz71+k6zIYY0zM0c00Zk166x80h/aNGDMbrF9UIwbgDa/qmm\nKmS90OvSk9RoR/K8gGBhL+5yRwKBgQDQ9jVN0Xrsu+3Xm38DQ6wVNraEpO4zDPw1\npSUYhM2sxDNK7VyHjFSxQD6lZCwTYEs8Q1gDNSWMdnPIeMitrzbyEJg+jBPcD251\nSthUhfOYdggOBHN/odAa3S7/AuqrWP0S/BUnXgxTVH8dyq00eYbojXM6DpK5TJqD\n7lD6HkNfwQKBgCGJnCSuxwDKNfcNAXtiDJwlsMEtnhrq8TxBznVOJ7/51RDAEZIo\nVhUAXcPYd01nbOQSXh+qosL7Ev0m3LvrHU/a9ZVX4UOjnyXWerMtQKmEcLOLsUze\nI4coRwzxoqLOpZNxGHCE9WAmmkuUhxvbOQjIDg/ZF6rnf92BxCgkIhd7AoGAcOtL\nfMThr4ISkfuGVGZCXKhXUzCpQ88Vj4uxkyFY366apTfFU75imfJEqC2Mn9/eaC9g\nJUOYCeKMyN10XF8dywtqqgoaRUXVg+6xHmPQcif+TEzdeTAg/BNgbQ/Pbk7FW3f7\nmm15LaKwmpHGrV+qpoqhpNLxOM8LhJXJDpBCCkECgYEAp8S/LSP5UiqqZClIvPOU\nClCCAMI/xWfFF/qSDD6mXScmfz2kP94KP9EmvYJzGE5WSwIjQUTCY2EVx3/fWNZT\n/bIcIt/gWYBt7I7BZM+Q/qTCQVO1pCBOYzjHM/OWn1ffEStfelqXZz8PBncWZAgm\nxWVRjlvMwvRyWv+IfgdFimQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sdgp-cb@sdgp-voice-recognition.iam.gserviceaccount.com",
+  "client_id": "111440152954560585345",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sdgp-cb%40sdgp-voice-recognition.iam.gserviceaccount.com"
+}
