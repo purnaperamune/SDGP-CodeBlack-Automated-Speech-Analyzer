@@ -19,7 +19,8 @@
         android:drawableTop="@drawable/rating"
         android:paddingTop="70px"
         android:text="Rate Speech"
-        android:textSize="55px" />
+        android:textSize="55px"
+        android:onClick="btnRateSpeech"/>
 
     <Button
         android:id="@+id/btnRecorder"

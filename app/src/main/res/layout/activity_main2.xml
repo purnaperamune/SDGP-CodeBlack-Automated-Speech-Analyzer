@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="178dp"
         android:layout_height="30dp"
-        android:text="@string/speech_ratings"
+        android:text="speech_ratings"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
