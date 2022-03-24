@@ -7,7 +7,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MainActivity2 extends AppCompatActivity {
+public class Result extends AppCompatActivity {
 
     TextView text1;
     TextView text2;
@@ -18,26 +18,26 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_result);
 
 
         ArrayList<Integer> points_1 = new ArrayList<>();
-        points_1.add(1);
-        points_1.add(14);
-        points_1.add(4);
-        points_1.add(98);
+        points_1.add(55);
+        points_1.add(94);
+        points_1.add(82);
+        points_1.add(68);
 
         String [] recording_names = new String[4];
-        recording_names[0]="recording_1";
-        recording_names[1]="recording_2";
-        recording_names[2]="recording_3";
-        recording_names[3]="recording_4";
+        recording_names[0]="Recording 1";
+        recording_names[1]="Recording 2";
+        recording_names[2]="Recording 3";
+        recording_names[3]="Recording 4";
 
         ArrayList<Integer> points = new ArrayList<>();
-        points.add(1);
-        points.add(14);
-        points.add(4);
-        points.add(98);
+        points.add(55);
+        points.add(94);
+        points.add(82);
+        points.add(68);
 
 
         text1= findViewById(R.id.textView1);

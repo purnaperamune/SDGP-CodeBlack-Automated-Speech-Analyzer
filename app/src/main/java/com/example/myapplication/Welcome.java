@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-public class welcome extends AppCompatActivity {
+public class Welcome extends AppCompatActivity {
 
     Button btnStart;
 
@@ -38,7 +38,7 @@ public class welcome extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(welcome.this , userSignUpActivity.class);
+                Intent intent = new Intent(Welcome.this , UserSignUpActivity.class);
                 startActivity(intent);
             }
         });
@@ -70,8 +70,8 @@ public class welcome extends AppCompatActivity {
         if (SDK_INT >= Build.VERSION_CODES.R) {
             return Environment.isExternalStorageManager();
         } else {
-            int result = ContextCompat.checkSelfPermission(welcome.this, READ_EXTERNAL_STORAGE);
-            int result1 = ContextCompat.checkSelfPermission(welcome.this, WRITE_EXTERNAL_STORAGE);
+            int result = ContextCompat.checkSelfPermission(Welcome.this, READ_EXTERNAL_STORAGE);
+            int result1 = ContextCompat.checkSelfPermission(Welcome.this, WRITE_EXTERNAL_STORAGE);
             return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
         }
     }

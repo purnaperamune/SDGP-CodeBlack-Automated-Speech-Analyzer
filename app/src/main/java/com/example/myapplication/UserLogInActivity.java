@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class userLogInActivity extends AppCompatActivity {
+public class UserLogInActivity extends AppCompatActivity {
 
     private static final String TAG = "SignInActivity";
     public FirebaseAuth mAuth;
@@ -44,7 +44,7 @@ public class userLogInActivity extends AppCompatActivity {
         txtBtnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(userLogInActivity.this , userSignUpActivity.class);
+                Intent intent2 = new Intent(UserLogInActivity.this , UserSignUpActivity.class);
                 startActivity(intent2);
             }
         });
@@ -69,7 +69,7 @@ public class userLogInActivity extends AppCompatActivity {
 
 
                     mAuth.signInWithEmailAndPassword(email.getText().toString(), pass.getText().toString())
-                            .addOnCompleteListener(userLogInActivity.this, new OnCompleteListener<AuthResult>() {
+                            .addOnCompleteListener(UserLogInActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
@@ -77,15 +77,15 @@ public class userLogInActivity extends AppCompatActivity {
                                         Log.d(TAG, "signInWithEmail:success");
 
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent HomeActivity = new Intent(userLogInActivity.this, MenuActivity.class);
+                                        Intent HomeActivity = new Intent(UserLogInActivity.this, MenuActivity.class);
                                         setResult(RESULT_OK, null);
                                         startActivity(HomeActivity);
-                                        userLogInActivity.this.finish();
+                                        UserLogInActivity.this.finish();
 
                                     } else {
                                         // If sign in fails, display a message to the user.
                                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(userLogInActivity.this, "Authentication failed.",
+                                        Toast.makeText(UserLogInActivity.this, "Authentication failed.",
                                                 Toast.LENGTH_SHORT).show();
                                         if (task.getException() != null) {
                                             Toast.makeText(getApplicationContext(),"Error  Retry",Toast.LENGTH_SHORT).show();

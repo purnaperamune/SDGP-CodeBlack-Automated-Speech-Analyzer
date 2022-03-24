@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity3 extends AppCompatActivity {
+public class Feedback extends AppCompatActivity {
     TextView recording_1;
     EditText input_1;
     TextView recording_2;
@@ -28,7 +28,7 @@ public class MainActivity3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_feedback);
 
 
         recording_1 = findViewById(R.id.recording_1);
@@ -59,7 +59,7 @@ public class MainActivity3 extends AppCompatActivity {
         Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this,MainActivity2.class);
+                Intent intent = new Intent(Feedback.this, Result.class);
                 startActivity(intent);
 
             }

@@ -1,20 +1,17 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class userSignUpActivity extends AppCompatActivity {
+public class UserSignUpActivity extends AppCompatActivity {
 
 
     private static final String TAG = "SignUpActivity";
@@ -53,7 +50,7 @@ public class userSignUpActivity extends AppCompatActivity {
         txtBtnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(userSignUpActivity.this , userLogInActivity.class);
+                Intent intent1 = new Intent(UserSignUpActivity.this , UserLogInActivity.class);
                 startActivity(intent1);
             }
         });
@@ -81,7 +78,7 @@ public class userSignUpActivity extends AppCompatActivity {
                  else {
 
 
-                    mAuth.createUserWithEmailAndPassword(signUpEmailTextInput.getText().toString(), signUpPasswordTextInput.getText().toString()).addOnCompleteListener(userSignUpActivity.this, new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(signUpEmailTextInput.getText().toString(), signUpPasswordTextInput.getText().toString()).addOnCompleteListener(UserSignUpActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -89,14 +86,14 @@ public class userSignUpActivity extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d(TAG, "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Intent signInIntent = new Intent(userSignUpActivity.this, userLogInActivity.class);
-                                userSignUpActivity.this.finish();
+                                Intent signInIntent = new Intent(UserSignUpActivity.this, UserLogInActivity.class);
+                                UserSignUpActivity.this.finish();
                                 startActivity(signInIntent);
 
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(userSignUpActivity.this, "Authentication failed.",
+                                Toast.makeText(UserSignUpActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
 
                                 if (task.getException() != null) {

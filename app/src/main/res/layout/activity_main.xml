@@ -4,36 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".InputSpeech">
 
   <TextView
-      android:layout_width="326dp"
-      android:layout_height="49dp"
-      android:layout_alignParentBottom="true"
-      android:layout_marginBottom="554dp"
-      android:text="Automated Speech Analyzer"
+      android:id="@+id/textView5"
+      android:layout_width="388dp"
+      android:layout_height="74dp"
+      android:text="Let us find the winner for your speech contest and give a score to each speech!"
+      android:textColor="@color/black"
       android:textSize="18dp"
       android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintHorizontal_bias="0.329"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.023" />
+      app:layout_constraintVertical_bias="0.024" />
 
   <TextView
-      android:layout_width="309dp"
-      android:layout_height="75dp"
-      android:text="Let us find the winner for your
-        speech contest and give a score to each other"
+      android:layout_width="388dp"
+      android:layout_height="74dp"
+      android:text="Please input 4 speeches and click Rate!
+---------------------------------------------
+"
+      android:textColor="@color/black"
       android:textSize="18dp"
       android:textStyle="bold"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintHorizontal_bias="0.382"
+      app:layout_constraintHorizontal_bias="1.0"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.099" />
+      app:layout_constraintVertical_bias="0.15" />
 
   <TextView
       android:id="@+id/rec1"
@@ -43,7 +45,8 @@
       android:freezesText="false"
       android:gravity=""
       android:singleLine="true"
-      android:text="recording_1"
+      android:text="Speech 1"
+      android:outlineSpotShadowColor="@color/black"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.28"
@@ -72,7 +75,7 @@
       android:layout_width="311dp"
       android:layout_height="50dp"
       android:gravity=""
-      android:text="Recording_2"
+      android:text="Speech 2"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintHorizontal_bias="0.28"
       app:layout_constraintLeft_toLeftOf="parent"
@@ -100,7 +103,7 @@
       android:layout_width="311dp"
       android:layout_height="50dp"
       android:gravity=""
-      android:text="Recording_3"
+      android:text="Speech 3"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintHorizontal_bias="0.29"
       app:layout_constraintLeft_toLeftOf="parent"
@@ -128,7 +131,7 @@
       android:layout_width="311dp"
       android:layout_height="50dp"
       android:gravity=""
-      android:text="Recording_4"
+      android:text="Speech 4"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintHorizontal_bias="0.3"
       app:layout_constraintLeft_toLeftOf="parent"
@@ -157,6 +160,7 @@
       android:layout_height="50dp"
       android:layout_marginTop="8dp"
       android:text="Rate"
+      android:textColor="@color/black"
       android:background="@drawable/custombutton"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.107"

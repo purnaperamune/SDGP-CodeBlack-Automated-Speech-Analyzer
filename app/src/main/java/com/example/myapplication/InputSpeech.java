@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class MainActivity extends AppCompatActivity {
+public class InputSpeech extends AppCompatActivity {
 
     TextView rec1;
     Button button1;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+                Intent intent = new Intent(InputSpeech.this, Feedback.class);
                 intent.putExtra("message_key", path);
                 intent.putExtra("message_key1", path1);
                 intent.putExtra("message_key2", path2);
