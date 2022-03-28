@@ -10,7 +10,6 @@ import android.os.CountDownTimer;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,30 +25,29 @@ import java.util.Locale;
 public class Recorder extends AppCompatActivity {
 
     TextView textView;
-    ImageButton start, stop, recordings;
-    MediaRecorder mediaRecorder;
-    MediaPlayer mediaPlayer;
+    ImageButton btnStart, btnStop, btnRecordings;
+    MediaRecorder mRecorder;
+    MediaPlayer mPlayer;
 
-    CountDownTimer countDownTimer;
-    int second = -1, minute, hour;
-//    String filePath;
-    String recordFile;
-    String audioFile;
+    CountDownTimer timer;
+    int secs = -1, min, hrs;
+    String recFile;
+    String audFile;
     public static final int PERMISSION_ALL = 0;
-    String newFileName;
-    ImageButton historyButton;
+    String newFile;
+    ImageButton btnHistory;
 
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recorder);
 
-        historyButton= findViewById(R.id.historyClick);
+        btnHistory = findViewById(R.id.historyClick);
         if (isMicrophonePresent()){
             getMicrophonePermission();
         }
 
-        historyButton.setOnClickListener(new View.OnClickListener() {
+        btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(Recorder.this, HistoryActivity.class);
@@ -60,42 +58,36 @@ public class Recorder extends AppCompatActivity {
     }
 
     public void btnRecordPressed(View v){
-//        String recordPath = getExternalFilesDir("Voice Records").getAbsolutePath();
-////        String recordPath = getExternalFilesDir("/").getAbsolutePath();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss", Locale.CANADA);
-        Date now = new Date();
+        Date datePresent = new Date();
 
-        recordFile = "Recording_" + formatter.format(now) + ".3gp";
+        recFile = "Recording_" + formatter.format(datePresent) + ".3gp";
 
-        String mainPath= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getPath();
-        File mainFolder=new File(mainPath);
+        String filePath= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getPath();
+        File mainFolder=new File(filePath);
         if (!mainFolder.exists()){
             mainFolder.mkdir();
         }
-        File folder= new File(mainPath,"recorded");
+        File folder= new File(filePath,"recorded");
         if (!folder.exists()){
             folder.mkdir();
         }
 
-        newFileName = folder+"/"+recordFile;
-
-//        filenameText.setText("Recording, File Name : " + recordFile);
+        newFile = folder+"/"+ recFile;
 
         try {
 
-            mediaRecorder = new MediaRecorder();
-            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-//            mediaRecorder.setOutputFile(getRecordingFilePath());
-//            mediaRecorder.setOutputFile(recordPath + "/" + recordFile);
-            mediaRecorder.setOutputFile(newFileName);
-            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-            mediaRecorder.prepare();
-            mediaRecorder.start();
+            mRecorder = new MediaRecorder();
+            mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            mRecorder.setOutputFile(newFile);
+            mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            mRecorder.prepare();
+            mRecorder.start();
 
             showTimer();
 
-            Toast.makeText(this,"Recording started",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Recording Started!",Toast.LENGTH_LONG).show();
 
         }
         catch (Exception e){
@@ -106,52 +98,22 @@ public class Recorder extends AppCompatActivity {
     }
 
     private void getRecordingFilePath(){
-//        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-//        File md = contextWrapper.getExternalFilesDir(Environment.DIRECTORY_MUSIC);
-//        File file = new File(md,"test"+".mp3");
-//        return file.getPath();
         Toast.makeText(this,"Nothing",Toast.LENGTH_LONG).show();
-//        return "A";
     }
-    public void btnStopPressed(View v){
-        mediaRecorder.stop();
-        mediaRecorder.release();
-        mediaRecorder = null;
-        countDownTimer.cancel();
-        second = -1;
-        minute = 0;
-        hour = 0;
-        textView.setText("00:00:00");
 
-        //creating content resolver and put the values
-//        ContentValues values = new ContentValues();
-//        values.put(MediaStore.Audio.Media.DATA, filePath);
-//        values.put(MediaStore.Audio.Media.MIME_TYPE, "audio/3gpp");
-//        values.put(MediaStore.Audio.Media.TITLE, audioFile);
-//        //store audio recorder file in the external content uri
-//        getContentResolver().insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, values);
+    public void btnStopPressed(View v){
+        mRecorder.stop();
+        mRecorder.release();
+        mRecorder = null;
+        timer.cancel();
+        secs = -1;
+        min = 0;
+        hrs = 0;
+        textView.setText("00:00:00");
 
         Toast.makeText(this,"Recording Stoped",Toast.LENGTH_LONG).show();
 
     }
-
-//    public void btnPlayPressed(View v){
-//
-//        try {
-//            mediaPlayer = new MediaPlayer();
-////            mediaPlayer.setDataSource(getRecordingFilePath());
-//            mediaPlayer.setDataSource(recordFile);
-//            mediaPlayer.prepare();
-//            mediaPlayer.start();
-//            Toast.makeText(this,"Recording playing",Toast.LENGTH_LONG).show();
-//
-//        }
-//        catch (Exception e){
-//            e.printStackTrace();
-//        }
-//
-//    }
-
 
     public void btnHistoryPressed(View view) {
         /*
@@ -179,31 +141,30 @@ public class Recorder extends AppCompatActivity {
         }
     }
 
-/////////////////////////////
     public void showTimer() {
         textView = (TextView) findViewById(R.id.text);
-        countDownTimer = new CountDownTimer(Long.MAX_VALUE, 1000) {
+        timer = new CountDownTimer(Long.MAX_VALUE, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                second++;
+                secs++;
                 textView.setText(recorderTime());
             }
             public void onFinish() {
 
             }
         };
-        countDownTimer.start();
+        timer.start();
     }
     public String recorderTime() {
-        if (second == 60) {
-            minute++;
-            second = 0;
+        if (secs == 60) {
+            min++;
+            secs = 0;
         }
-        if (minute == 60) {
-            hour++;
-            minute = 0;
+        if (min == 60) {
+            hrs++;
+            min = 0;
         }
-        return String.format("%02d:%02d:%02d", hour, minute, second);
+        return String.format("%02d:%02d:%02d", hrs, min, secs);
     }
 
 
