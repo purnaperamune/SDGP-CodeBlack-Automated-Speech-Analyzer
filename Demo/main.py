@@ -3,7 +3,7 @@ import os
 from google.cloud import speech
 import wave
 
-
+#Shankashana Krishnakumar - 2019772
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'sdgp-voice-recognition-040344760f01.json' #Creating an envirnoment where a json file is assigned to it.
 speech_client = speech.SpeechClient() #"speech.SpeechClient" is assigned to a local variable called speech_client.
 client = speech.SpeechClient() #"speech.SpeechClient" is assigned to a local variable called client.
