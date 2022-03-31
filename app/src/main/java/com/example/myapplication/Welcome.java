@@ -53,6 +53,7 @@ public class Welcome extends AppCompatActivity {
             }
         }
     }
+
     private void requestPermission() {
         try {
             Intent intent = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
