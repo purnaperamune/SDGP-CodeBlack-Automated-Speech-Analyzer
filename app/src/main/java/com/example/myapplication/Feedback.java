@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/*
+This page is to get the user feedback from the outside as a numerical value from 1 to 10
+ */
+
 public class Feedback extends AppCompatActivity {
     TextView recording_1;
     EditText input_1;
@@ -59,6 +63,7 @@ public class Feedback extends AppCompatActivity {
         Enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Calling the next page which generates the final results when user press enter button
                 Intent intent = new Intent(Feedback.this, Result.class);
                 startActivity(intent);
 

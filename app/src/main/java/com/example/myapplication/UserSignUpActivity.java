@@ -39,6 +39,7 @@ public class UserSignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_sign_up);
 
 
+        //Connecting with the firebase
         mAuth = FirebaseAuth.getInstance();
 
         btnSignUp = findViewById(R.id.btnSignUp);

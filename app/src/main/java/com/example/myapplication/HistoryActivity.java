@@ -18,6 +18,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/*
+This page is used to display previously recorded speeches
+ */
 public class HistoryActivity extends AppCompatActivity implements PlayAudioInterface{
 
     RecyclerView recyclerView;
@@ -96,7 +99,8 @@ public class HistoryActivity extends AppCompatActivity implements PlayAudioInter
 
         String mainPath= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).getPath();
 
-        File file = new File( mainPath + "/recorded" );
+//        File file = new File( mainPath + "/recorded" );
+        File file = new File( mainPath + "/Speeches" );
         File list[] = file.listFiles();
 
         for( int i=0; i< list.length; i++)
@@ -112,6 +116,7 @@ public class HistoryActivity extends AppCompatActivity implements PlayAudioInter
 
     }
 
+    //Function of the audio player. Allows the user to play recordings with a media player
     @Override
     public void playAudio(int position) {
         posit= position;

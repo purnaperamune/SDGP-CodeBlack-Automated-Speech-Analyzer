@@ -8,7 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/*
+This page is to input the speeches into the application.
+ */
 public class InputSpeech extends AppCompatActivity {
 
     TextView rec1;

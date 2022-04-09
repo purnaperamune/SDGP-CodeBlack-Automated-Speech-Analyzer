@@ -50,6 +50,7 @@ public class Recorder extends AppCompatActivity {
         btnHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Calling the Past Speeches Page when the button clicks
                 Intent intent= new Intent(Recorder.this, HistoryActivity.class);
                 startActivity(intent);
             }
@@ -57,6 +58,10 @@ public class Recorder extends AppCompatActivity {
 
     }
 
+    /*
+    This function is used to start the recording. New recordings will be saved in a
+    seperate folder named Speeches
+    */
     public void btnRecordPressed(View v){
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_hh_mm_ss", Locale.CANADA);
         Date datePresent = new Date();
@@ -68,7 +73,7 @@ public class Recorder extends AppCompatActivity {
         if (!mainFolder.exists()){
             mainFolder.mkdir();
         }
-        File folder= new File(filePath,"recorded");
+        File folder= new File(filePath,"Speeches");
         if (!folder.exists()){
             folder.mkdir();
         }
@@ -101,6 +106,10 @@ public class Recorder extends AppCompatActivity {
         Toast.makeText(this,"Nothing",Toast.LENGTH_LONG).show();
     }
 
+    /*
+    This function is used to stop the recording after pressing the start button.
+    After stopped, a message will be shown to the user as a toast saying 'Recording Stopped!'
+     */
     public void btnStopPressed(View v){
         mRecorder.stop();
         mRecorder.release();
@@ -111,7 +120,7 @@ public class Recorder extends AppCompatActivity {
         hrs = 0;
         textView.setText("00:00:00");
 
-        Toast.makeText(this,"Recording Stoped",Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Recording Stopped!",Toast.LENGTH_LONG).show();
 
     }
 
@@ -124,6 +133,9 @@ public class Recorder extends AppCompatActivity {
 
     }
 
+    /*
+    Checking if the microphone permission are enabled or not
+     */
     private boolean isMicrophonePresent(){
         if(this.getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE)){
             return true;
@@ -133,6 +145,9 @@ public class Recorder extends AppCompatActivity {
         }
     }
 
+    /*
+    To record the voice, the user should give the permission to access microphone.
+     */
     private void getMicrophonePermission(){
          if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
                  ==PackageManager.PERMISSION_DENIED){
@@ -141,6 +156,9 @@ public class Recorder extends AppCompatActivity {
         }
     }
 
+    /*
+    Implementation of the timer of the recorder
+     */
     public void showTimer() {
         textView = (TextView) findViewById(R.id.text);
         timer = new CountDownTimer(Long.MAX_VALUE, 1000) {

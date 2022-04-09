@@ -58,6 +58,7 @@ public class UserLogInActivity extends AppCompatActivity {
                 if (email.getText().toString().contentEquals("")) {
 
 
+                    //Showing error messages when the user try to go forward without entering email or password
                     Toast.makeText(getApplicationContext(),"Email cannot be empty",Toast.LENGTH_SHORT).show();
 
 
